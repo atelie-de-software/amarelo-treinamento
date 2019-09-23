@@ -1,27 +1,19 @@
 class Jogo
-  def initialize
 
-  end
-  
-  def sobe
-
+  def jump y
+    y += 1
   end
 
-  def desce
-
+  def down y
+    y -= 1
   end
 
-  def esquerda
-
+  def left x
+    x -= 1
   end
 
-  def direita
-
-  end
-
-
-  def pulo
-
+  def right x
+    x += 1
   end
 
   def tick
@@ -29,6 +21,6 @@ class Jogo
   end
 
   def tela
-  
+
   end
 end
