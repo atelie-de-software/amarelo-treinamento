@@ -21,9 +21,6 @@ class Jogo
   end
 
   def tela
-    "******\n"+
-    "*    *\n"+
-    "*    *\n"+
-    "******\n"
+
   end
 end
