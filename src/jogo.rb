@@ -29,10 +29,6 @@ class Jogo
   end
 
   def tela
-    "      \n"+
-    "    # \n"+
-    "   ! #\n"+
-    "      \n"+
-    "m_____\n"
+  
   end
 end

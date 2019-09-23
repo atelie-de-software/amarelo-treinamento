@@ -5,7 +5,7 @@ RSpec.describe Jogo do
       jogo = Jogo.new
       tela = "      \n"+
              "    # \n"+
-             "   ! #\n"+
+             "   ? #\n"+
              "      \n"+
              "m_____\n"
       expect(jogo.tela).to  eq(tela)
@@ -15,7 +15,7 @@ RSpec.describe Jogo do
       jogo = Jogo.new
       tela = "      \n"+
              "    # \n"+
-             "   ! #\n"+
+             "   ? #\n"+
              "      \n"+
              "_m____\n"
       
@@ -23,5 +23,56 @@ RSpec.describe Jogo do
 
       expect(jogo.tela).to  eq(tela)
     end
+
+    it 'Pulo sem obstáculo' do
+      jogo = Jogo.new
+      tela = "      \n"+
+             "    # \n"+
+             " m ? #\n"+
+             "      \n"+
+             "______\n"
+      
+      jogo.direita
+
+      jogo.sobe
+
+      expect(jogo.tela).to  eq(tela)
+    end
+    
+    it 'Pulo com obstáculo quebrável' do
+      jogo = Jogo.new
+      tela = "      \n"+
+             "   o# \n"+
+             "   ! #\n"+
+             "   m  \n"+
+             "______\n"
+      
+      jogo.direita
+      jogo.direita
+      jogo.direita
+      jogo.sobe
+
+      expect(jogo.tela).to  eq(tela)
+    end
+    
+    it 'Pulo com obstáculo não quebrável' do
+      jogo = Jogo.new
+      tela = "      \n"+
+             "    # \n"+
+             "   ? #\n"+
+             "     m\n"+
+             "______\n"
+      
+      jogo.direita
+      jogo.direita
+      jogo.direita
+      jogo.direita
+      jogo.direita
+      jogo.sobe
+
+
+      expect(jogo.tela).to  eq(tela)
+    end
+    
   end
 end
