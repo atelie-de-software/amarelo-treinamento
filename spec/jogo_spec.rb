@@ -1,12 +1,13 @@
 require './src/jogo'
 RSpec.describe Jogo do
-  describe 'method #new_jogo' do
-    it 'Deve instanciar o jogo' do
+  describe 'Tela inicial' do
+    it 'Cenário inícial' do
       jogo = Jogo.new
-      tela =  "******\n"+
-              "*    *\n"+
-              "*    *\n"+
-              "******\n"
+      tela = "      \n"+
+             "    # \n"+
+             "   ! #\n"+
+             "      \n"+
+             "m_____\n"
       expect(jogo.tela).to  eq(tela)
     end
   end
