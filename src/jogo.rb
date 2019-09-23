@@ -15,7 +15,7 @@ class Jogo
 
   end
 
-  def direta
+  def direita
 
   end
 
