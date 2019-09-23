@@ -1,7 +1,7 @@
 require './src/jogo'
 RSpec.describe Jogo do
   describe 'Tela inicial' do
-    it 'Cenário inícial' do
+    xit 'Cenário inícial' do
       jogo = Jogo.new
       tela = "      \n"+
              "    # \n"+
@@ -24,7 +24,7 @@ RSpec.describe Jogo do
       expect(jogo.tela).to  eq(tela)
     end
 
-    it 'Pulo sem obstáculo' do
+    xit 'Pulo sem obstáculo' do
       jogo = Jogo.new
       tela = "      \n"+
              "    # \n"+
@@ -39,7 +39,7 @@ RSpec.describe Jogo do
       expect(jogo.tela).to  eq(tela)
     end
     
-    it 'Pulo com obstáculo quebrável' do
+    xit 'Pulo com obstáculo quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
              "   o# \n"+
@@ -55,7 +55,7 @@ RSpec.describe Jogo do
       expect(jogo.tela).to  eq(tela)
     end
     
-    it 'Pulo com obstáculo não quebrável' do
+    xit 'Pulo com obstáculo não quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
              "    # \n"+
