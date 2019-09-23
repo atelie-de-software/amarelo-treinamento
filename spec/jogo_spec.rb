@@ -24,11 +24,27 @@ RSpec.describe Jogo do
       expect(jogo.tela).to  eq(tela)
     end
 
+    xit 'Movimentar cenário ao chegar na metade' do
+      jogo = Jogo.new
+      
+      jogo.direita
+      jogo.direita
+      jogo.direita
+      
+      tela = "      \n"+
+             "   #  \n"+
+             "  ? # \n"+
+             "      \n"+
+             "__m___\n"
+
+      expect(jogo.tela).to  eq(tela)
+    end
+
     xit 'Pulo sem obstáculo' do
       jogo = Jogo.new
       tela = "      \n"+
-             "    # \n"+
-             " m ? #\n"+
+             " m  # \n"+
+             "   ? #\n"+
              "      \n"+
              "______\n"
       
@@ -42,9 +58,9 @@ RSpec.describe Jogo do
     xit 'Pulo com obstáculo quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
-             "   o# \n"+
-             "   ! #\n"+
-             "   m  \n"+
+             "  o#  \n"+
+             "  ! # \n"+
+             "  m   \n"+
              "______\n"
       
       jogo.direita
@@ -58,9 +74,9 @@ RSpec.describe Jogo do
     xit 'Pulo com obstáculo não quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
-             "    # \n"+
-             "   ? #\n"+
-             "     m\n"+
+             " #    \n"+
+             "? #   \n"+
+             "  m   \n"+
              "______\n"
       
       jogo.direita
