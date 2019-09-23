@@ -1,8 +1,8 @@
 require 'dispel'
 
 x = 0
-y = 0
-output = 'M'
+y = 4
+output = ''
 array = Array.new(10, 0)
 
 def write(line,row,text)
