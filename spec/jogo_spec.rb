@@ -14,11 +14,11 @@ RSpec.describe Jogo do
 
     xit 'Movimento para direita' do
       jogo = Jogo.new
-      tela = "      \n"+
-             "    # \n"+
-             "   ? #\n"+
-             "      \n"+
-             "_m____\n"
+      tela = '      \n'\
+             '    # \n'\
+             '   ? #\n'\
+             '      \n'\
+             '_m____'
 
       jogo.direita
       expect(jogo.tela).to eq(tela)
@@ -49,11 +49,11 @@ RSpec.describe Jogo do
 
     xit 'Pulo sem obstáculo' do
       jogo = Jogo.new
-      tela = "      \n"+
-             " m  # \n"+
-             "   ? #\n"+
-             "      \n"+
-             "______\n"
+      tela = '      \n'\
+             ' m  # \n'\
+             '   ? #\n'\
+             '      \n'\
+             '______'
 
       jogo.direita
 
@@ -74,11 +74,11 @@ RSpec.describe Jogo do
 
     xit 'Pulo com obstáculo quebrável' do
       jogo = Jogo.new
-      tela = "      \n"+
-             "  o#  \n"+
-             "  ! # \n"+
-             "  m   \n"+
-             "______\n"
+      tela = '      \n'\
+             '  o#  \n'\
+             '  ! # \n'\
+             '  m   \n'\
+             '______'
 
       jogo.direita
       jogo.direita
@@ -89,11 +89,11 @@ RSpec.describe Jogo do
 
     xit 'Pulo com obstáculo não quebrável' do
       jogo = Jogo.new
-      tela = "      \n"+
-             " #    \n"+
-             "? #   \n"+
-             "  m   \n"+
-             "______\n"
+      tela = '      \n'\
+             ' #    \n'\
+             '? #   \n'\
+             '  m   \n'\
+             '______'
 
       jogo.direita
       jogo.direita
