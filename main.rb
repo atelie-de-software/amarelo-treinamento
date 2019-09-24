@@ -5,7 +5,6 @@ jogo = Jogo.new
 # draw app and redraw after each keystroke
 Dispel::Screen.open do |screen|
   Dispel::Keyboard.output timeout: 0.5 do |key|
-    screen.draw jogo.tela
     next unless key
 
     exit(true) if key == :"Ctrl+c"
@@ -15,5 +14,8 @@ Dispel::Screen.open do |screen|
     jogo.sobe if key == :up
     jogo.desce if key == :down
 
+    jogo.tick
+
+    screen.draw jogo.tela
   end
 end
