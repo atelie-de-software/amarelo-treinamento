@@ -104,14 +104,6 @@ RSpec.describe Jogo do
 
         jogo.tick
         tela =  "      \n"\
-                "m   # \n"\
-                "   ? #\n"\
-                "      \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
                 "    # \n"\
                 "m  ? #\n"\
                 "      \n"\
