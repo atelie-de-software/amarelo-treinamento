@@ -15,7 +15,6 @@ Dispel::Screen.open do |screen|
     jogo.sobe if key == :up
     jogo.desce if key == :down
 
-    screen.draw jogo.tela
 
   end
 end
