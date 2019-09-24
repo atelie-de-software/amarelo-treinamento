@@ -15,12 +15,6 @@ RSpec.describe Jogo do
     context 'Movimentações do personagem' do
       it 'Movimento para direita' do
         jogo = Jogo.new
-        tela = "      \n"\
-               "    # \n"\
-               "   ? #\n"\
-               "      \n"\
-               "_m____"
-
         jogo.direita
         tela = "      \n"\
                "    # \n"\
@@ -31,58 +25,125 @@ RSpec.describe Jogo do
       end
 
       context 'Quando personagem pular' do
-        it 'Sem obstáculo' do
+        xit 'Sem obstáculo' do
           jogo = Jogo.new
+          jogo.sobe
+          jogo.tick
+          tela =  "      \n"\
+                  "    # \n"\
+                  "   ? #\n"\
+                  "m     \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela =  "      \n"\
+                  "    # \n"\
+                  "m  ? #\n"\
+                  "      \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
           tela =  "      \n"\
                   "m   # \n"\
                   "   ? #\n"\
                   "      \n"\
                   "______"
-
-          jogo.sobe
           expect(jogo.tela).to eq(tela)
-        end
 
-        xit 'Desce sem obstáculo' do
+          jogo.tick
+          tela =  "      \n"\
+                  "m   # \n"\
+                  "   ? #\n"\
+                  "      \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela =  "      \n"\
+                  "    # \n"\
+                  "m  ? #\n"\
+                  "      \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela =  "      \n"\
+                  "    # \n"\
+                  "   ? #\n"\
+                  "m     \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
           tela =  "      \n"\
                   "    # \n"\
                   "   ? #\n"\
                   "      \n"\
                   "m_____"
-          jogo.sobe
-          jogo.tick
           expect(jogo.tela).to eq(tela)
         end
 
         xit 'Pulo com obstáculo quebrável' do
           jogo = Jogo.new
-          tela =  "      \n"\
-                  "  o#  \n"\
-                  "  ! # \n"\
-                  "  m   \n"\
-                  "______"
-
-          jogo.direita
           jogo.direita
           jogo.direita
           jogo.sobe
+          jogo.tick
+          tela =  "      \n"\
+                  "    # \n"\
+                  "   ? #\n"\
+                  "   m  \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela =  "      \n"\
+                  "   o# \n"\
+                  "   ! #\n"\
+                  "   m  \n"\
+                  "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela =  "      \n"\
+                  "   o# \n"\
+                  "   ! #\n"\
+                  "      \n"\
+                  "___m__"
           expect(jogo.tela).to eq(tela)
         end
 
         xit 'Pulo com obstáculo não quebrável' do
           jogo = Jogo.new
-          tela =  "      \n"\
-                  " #    \n"\
-                  "? #   \n"\
-                  "  m   \n"\
-                  "______"
-
-          jogo.direita
           jogo.direita
           jogo.direita
           jogo.direita
           jogo.direita
           jogo.sobe
+          jogo.tick
+          tela = "      \n"\
+                 "  #   \n"\
+                 " ? #  \n"\
+                 "      \n"\
+                 "___m__"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela = "      \n"\
+                 "  #   \n"\
+                 " ? #  \n"\
+                 "   m  \n"\
+                 "______"
+          expect(jogo.tela).to eq(tela)
+
+          jogo.tick
+          tela = "      \n"\
+                 "  #   \n"\
+                 " ? #  \n"\
+                 "      \n"\
+                 "___m__"
           expect(jogo.tela).to eq(tela)
         end
       end
@@ -90,46 +151,47 @@ RSpec.describe Jogo do
 
     context 'Personagem deve respeitar os limites da tela' do
       xit 'Limite máximo para a lateral esquerda' do
+       jogo.esquerda
        tela = "      \n"\
               "    # \n"\
               "   ? #\n"\
               "      \n"\
               "m_____"
-      jogo.esquerda
       expect(jogo.tela).to eq(tela)
       end
 
-      xit 'Limite máximo para a lateral direita' do
+      xit 'Cenário anda para a esquerda' do
+       jogo.direita
+       jogo.direita
+       jogo.direita
+       jogo.direita
        tela = "      \n"\
               "   #  \n"\
               "  ? # \n"\
               "      \n"\
               "__m___"
-
-       jogo.direita
-       jogo.direita
-       jogo.direita
-       jogo.direita
        expect(jogo.tela).to eq(tela)
       end
 
       xit 'Limite máximo para baixo' do
+        jogo = Jogo.new
+        jogo.desce
         tela = "      \n"\
                "    # \n"\
                "   ? #\n"\
                "      \n"\
                "m_____"
-        jogo.desce
         expect(jogo.tela).to eq(tela)
       end
 
       xit 'Limite máximo para cima' do
+        jogo = Jogo.new
+        jogo.sobe
         tela = "m     \n"\
                "    # \n"\
                "   ? #\n"\
                "      \n"\
                "______"
-        jogo.sobe
         expect(jogo.tela).to eq(tela)
       end
     end
