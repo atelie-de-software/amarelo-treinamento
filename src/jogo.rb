@@ -5,7 +5,7 @@ class Jogo
   end
 
   def sobe
-    @posicao_y -= 1
+    @posicao_y -= 3
   end
 
   def desce
