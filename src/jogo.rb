@@ -1,26 +1,42 @@
 class Jogo
-
-  def jump y
-    y += 1
+  def initialize(posicao_x = 0, posicao_y = 4)
+    @posicao_x = posicao_x
+    @posicao_y = posicao_y
   end
 
-  def down y
-    y -= 1
+  def sobe
+    @posicao_y -= 1
   end
 
-  def left x
-    x -= 1
+  def desce
+    @posicao_y += 1
   end
 
-  def right x
-    x += 1
+  def esquerda
+    @posicao_x -= 1
   end
 
-  def tick
-
+  def direita
+    @posicao_x += 1
   end
+
+  # def tiro; end
 
   def tela
+    campo = [
+      [' ', ' ', ' ', ' ', ' ', ' '],
+      [' ', ' ', ' ', ' ', '#', ' '],
+      [' ', ' ', ' ', '?', ' ', '#'],
+      [' ', ' ', ' ', ' ', ' ', ' '],
+      ['_', '_', '_', '_', '_', '_']
+    ]
 
+    if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
+      campo[@posicao_y][@posicao_x] = 'm'
+    end
+
+    campo.map { |linha| linha.reduce(:+) }.join("\n")
   end
+
+  def tick; end
 end

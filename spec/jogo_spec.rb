@@ -12,12 +12,13 @@ RSpec.describe Jogo do
       expect(jogo.tela).to eq(tela)
     end
 
-    it 'Movimento para direita' do
-      tela = '      \n'\
-             '    # \n'\
-             '   ? #\n'\
-             '      \n'\
-             '_m____'
+    xit 'Movimento para direita' do
+      jogo = Jogo.new
+      tela = "      \n"+
+             "    # \n"+
+             "   ? #\n"+
+             "      \n"+
+             "_m____\n"
 
       jogo.direita
       expect(jogo.tela).to eq(tela)
@@ -47,11 +48,14 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo sem obstáculo' do
-      tela = '      \n'\
-             'm   # \n'\
-             '   ? #\n'\
-             '      \n'\
-             '______'
+      jogo = Jogo.new
+      tela = "      \n"+
+             " m  # \n"+
+             "   ? #\n"+
+             "      \n"+
+             "______\n"
+
+      jogo.direita
 
       jogo.sobe
       expect(jogo.tela).to eq(tela)
@@ -69,11 +73,12 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo com obstáculo quebrável' do
-      tela = '      \n'\
-             '  o#  \n'\
-             '  ! # \n'\
-             '  m   \n'\
-             '______'
+      jogo = Jogo.new
+      tela = "      \n"+
+             "  o#  \n"+
+             "  ! # \n"+
+             "  m   \n"+
+             "______\n"
 
       jogo.direita
       jogo.direita
@@ -83,11 +88,12 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo com obstáculo não quebrável' do
-      tela = '      \n'\
-             ' #    \n'\
-             '? #   \n'\
-             '  m   \n'\
-             '______'
+      jogo = Jogo.new
+      tela = "      \n"+
+             " #    \n"+
+             "? #   \n"+
+             "  m   \n"+
+             "______\n"
 
       jogo.direita
       jogo.direita
