@@ -4,41 +4,40 @@ RSpec.describe Jogo do
   context 'Tela inicial' do
     let(:jogo) { Jogo.new }
     it 'Cenário inícial' do
-      tela = '      \n'\
-             '    # \n'\
-             '   ? #\n'\
-             '      \n'\
+      tela = "      \n"\
+             "    # \n"\
+             "   ? #\n"\
+             "      \n"\
              'm_____'
       expect(jogo.tela).to eq(tela)
     end
 
     xit 'Movimento para direita' do
-      jogo = Jogo.new
-      tela = '      \n'\
-             '    # \n'\
-             '   ? #\n'\
-             '      \n'\
-             '_m____'
-
       jogo.direita
+      tela = "      \n"\
+             "    # \n"\
+             "   ? #\n"\
+             "      \n"\
+             '_m____'
       expect(jogo.tela).to eq(tela)
     end
 
     it 'Movimento para a esquerda' do
-      tela = '      \n'\
-             '    # \n'\
-             '   ? #\n'\
-             '      \n'\
-             'm_____'
+      jogo.direita
       jogo.esquerda
+      tela = "      \n"\
+             "    # \n"\
+             "   ? #\n"\
+             "      \n"\
+             'm_____'
       expect(jogo.tela).to eq(tela)
     end
 
     it 'Movimentar cenário ao chegar na metade' do
-      tela = '      \n'\
-             '   #  \n'\
-             '  ? # \n'\
-             '      \n'\
+      tela = "      \n"\
+             "   #  \n"\
+             "  ? # \n"\
+             "      \n"\
              '__m___'
 
       jogo.direita
@@ -48,24 +47,21 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo sem obstáculo' do
-      jogo = Jogo.new
-      tela = '      \n'\
-             ' m  # \n'\
-             '   ? #\n'\
-             '      \n'\
+      tela = "      \n"\
+             "m   # \n"\
+             "   ? #\n"\
+             "      \n"\
              '______'
-
-      jogo.direita
 
       jogo.sobe
       expect(jogo.tela).to eq(tela)
     end
 
     xit 'Desce sem obstáculo' do
-      tela = '      \n'\
-             '    # \n'\
-             '   ? #\n'\
-             '      \n'\
+      tela = "      \n"\
+             "    # \n"\
+             "   ? #\n"\
+             "      \n"\
              'm_____'
       jogo.sobe
       jogo.tick
@@ -73,11 +69,10 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo com obstáculo quebrável' do
-      jogo = Jogo.new
-      tela = '      \n'\
-             '  o#  \n'\
-             '  ! # \n'\
-             '  m   \n'\
+      tela = "      \n"\
+             "  o#  \n"\
+             "  ! # \n"\
+             "  m   \n"\
              '______'
 
       jogo.direita
@@ -88,11 +83,10 @@ RSpec.describe Jogo do
     end
 
     xit 'Pulo com obstáculo não quebrável' do
-      jogo = Jogo.new
-      tela = '      \n'\
-             ' #    \n'\
-             '? #   \n'\
-             '  m   \n'\
+      tela = "      \n"\
+             " #    \n"\
+             "? #   \n"\
+             "  m   \n"\
              '______'
 
       jogo.direita
