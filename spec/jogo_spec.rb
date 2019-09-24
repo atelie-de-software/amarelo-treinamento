@@ -33,7 +33,7 @@ RSpec.describe Jogo do
       expect(jogo.tela).to eq(tela)
     end
 
-    it 'Movimentar cenário ao chegar na metade' do
+    xit 'Movimentar cenário ao chegar na metade' do
       tela = "      \n"\
              "   #  \n"\
              "  ? # \n"\
