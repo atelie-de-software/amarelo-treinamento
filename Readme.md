@@ -9,3 +9,10 @@
 `rspec`
 ### Atualizar Gems no container
 `bundle`
+
+
+# Spike
+`sudo gem install gosu`
+### Entrar no diretório 'spike'
+`irb -r './spike.rb'`
+`Tutorial.new.show`
