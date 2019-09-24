@@ -18,7 +18,7 @@ RSpec.describe Jogo do
              "   ? #\n"+
              "      \n"+
              "_m____\n"
-      
+
       jogo.direita
 
       expect(jogo.tela).to  eq(tela)
@@ -47,14 +47,14 @@ RSpec.describe Jogo do
              "   ? #\n"+
              "      \n"+
              "______\n"
-      
+
       jogo.direita
 
       jogo.sobe
 
       expect(jogo.tela).to  eq(tela)
     end
-    
+
     xit 'Pulo com obstáculo quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
@@ -62,7 +62,7 @@ RSpec.describe Jogo do
              "  ! # \n"+
              "  m   \n"+
              "______\n"
-      
+
       jogo.direita
       jogo.direita
       jogo.direita
@@ -70,7 +70,7 @@ RSpec.describe Jogo do
 
       expect(jogo.tela).to  eq(tela)
     end
-    
+
     xit 'Pulo com obstáculo não quebrável' do
       jogo = Jogo.new
       tela = "      \n"+
@@ -78,7 +78,7 @@ RSpec.describe Jogo do
              "? #   \n"+
              "  m   \n"+
              "______\n"
-      
+
       jogo.direita
       jogo.direita
       jogo.direita
@@ -89,6 +89,6 @@ RSpec.describe Jogo do
 
       expect(jogo.tela).to  eq(tela)
     end
-    
+
   end
 end
