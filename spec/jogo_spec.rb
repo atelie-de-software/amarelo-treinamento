@@ -29,8 +29,9 @@ RSpec.describe Jogo do
   end
 
   context 'Movimentações do personagem' do
+    let!(:jogo) { Jogo.new }
+
     it 'Movimento para direita' do
-      jogo = Jogo.new
       jogo.direita
       tela = "      \n"\
              "    # \n"\
@@ -41,7 +42,7 @@ RSpec.describe Jogo do
     end
 
     context 'Personagem deve respeitar os limites da tela' do
-      xit 'Limite máximo para a lateral esquerda' do
+      it 'Limite máximo para a lateral esquerda' do
        jogo.esquerda
        tela = "      \n"\
               "    # \n"\

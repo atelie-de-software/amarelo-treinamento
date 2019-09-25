@@ -15,7 +15,7 @@ class Jogo
   end
 
   def esquerda
-    @posicao_x -= 1
+    @posicao_x -= 1 if @posicao_x - 1 >= 0
   end
 
   def direita
