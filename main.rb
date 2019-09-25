@@ -4,6 +4,7 @@ require 'ruby2d'
 
 set width: 150, height: 125
 set background: 'black'
+set fullscreen: true
 
 jogo = Jogo.new
 
