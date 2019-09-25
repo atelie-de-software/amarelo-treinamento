@@ -2,7 +2,7 @@ require 'dispel'
 require './src/jogo'
 require 'ruby2d'
 
-set width: 300, height: 200
+set width: 300, height: 250
 set background: 'black'
 
 jogo = Jogo.new
@@ -32,34 +32,34 @@ if resposta == 's'
     jogo.tick
     jogo.tela.split("\n")[0].each_char.with_index { |c, index|
       Image.new('images/mario.png', x: index * 50, y: 0)  if c == "m"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "?"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "#"
+      Image.new('images/Bloco_surpresa.png', x: index * 50, y: 0)  if c == "?"
+      Image.new('images/bloco_comum.png', x: index * 50, y: 0)  if c == "#"
     }
 
     jogo.tela.split("\n")[1].each_char.with_index { |c, index|
       Image.new('images/mario.png', x: index * 50, y: 50)  if c == "m"
-      Image.new('images/food.png', x: index * 50, y: 50)  if c == "?"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "#"
+      Image.new('images/Bloco_surpresa.png', x: index * 50, y: 50)  if c == "?"
+      Image.new('images/bloco_comum.png', x: index * 50, y: 0)  if c == "#"
 
     }
 
     jogo.tela.split("\n")[2].each_char.with_index { |c, index|
       Image.new('images/mario.png', x: index * 50, y: 100)  if c == "m"
-      Image.new('images/food.png', x: index * 50, y: 100)  if c == "?"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "#"
+      Image.new('images/Bloco_surpresa.png', x: index * 50, y: 100)  if c == "?"
+      Image.new('images/bloco_comum.png', x: index * 50, y: 0)  if c == "#"
 
     }
 
     jogo.tela.split("\n")[3].each_char.with_index { |c, index|
       Image.new('images/mario.png', x: index * 50, y: 150)  if c == "m"
-      Image.new('images/food.png', x: index * 50, y: 150)  if c == "?"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "#"
+      Image.new('images/Bloco_surpresa.png', x: index * 50, y: 150)  if c == "?"
+      Image.new('images/bloco_comum.png', x: index * 50, y: 0)  if c == "#"
     }
 
     jogo.tela.split("\n")[4].each_char.with_index { |c, index|
       Image.new('images/mario.png', x: index * 50, y: 200)  if c == "m"
-      Image.new('images/food.png', x: index * 50, y: 200)  if c == "?"
-      Image.new('images/food.png', x: index * 50, y: 0)  if c == "#"
+      Image.new('images/Bloco_surpresa.png', x: index * 50, y: 200)  if c == "?"
+      Image.new('images/bloco_comum.png', x: index * 50, y: 0)  if c == "#"
     }
 
   end
