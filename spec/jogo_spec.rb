@@ -75,7 +75,7 @@ RSpec.describe Jogo do
     end
 
     context 'Quando personagem pular' do
-      xit 'Sem obstáculo' do
+      it 'Sem obstáculo' do
         jogo = Jogo.new
         jogo.sobe
         jogo.tick
