@@ -61,17 +61,6 @@ RSpec.describe Jogo do
                "m_____"
         expect(jogo.tela).to eq(tela)
       end
-
-      xit 'Limite máximo para cima' do
-        jogo = Jogo.new
-        jogo.sobe
-        tela = "m     \n"\
-               "    # \n"\
-               "   ? #\n"\
-               "      \n"\
-               "______"
-        expect(jogo.tela).to eq(tela)
-      end
     end
 
     context 'Quando personagem pular' do
