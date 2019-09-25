@@ -2,6 +2,8 @@ require 'dispel'
 require './src/jogo'
 require 'ruby2d'
 
+SIZE_IMAGE = 25
+
 set width: 150, height: 125
 set background: 'black'
 set fullscreen: true
@@ -33,9 +35,9 @@ if resposta == 's'
     jogo.tick
     jogo.tela.split("\n").each.with_index { |line, index_line|
       line.each_char.with_index { |c, index|
-        Image.new('images/mario.png', x: index * 25, y: index_line * 25)  if c == "m"
-        Image.new('images/Bloco_surpresa.png', x: index * 25, y: index_line * 25)  if c == "?"
-        Image.new('images/bloco_comum.png', x: index * 25, y: index_line * 25) if c == "#"
+        Image.new('images/mario.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "m"
+        Image.new('images/Bloco_surpresa.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "?"
+        Image.new('images/bloco_comum.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE) if c == "#"
       }
     }
 
