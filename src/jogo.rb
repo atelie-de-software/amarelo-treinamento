@@ -11,7 +11,7 @@ class Jogo
   end
 
   def desce
-    @posicao_y += 1
+    @posicao_y += 1 if @posicao_y + 1 < 5
   end
 
   def esquerda

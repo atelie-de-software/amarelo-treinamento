@@ -52,8 +52,7 @@ RSpec.describe Jogo do
       expect(jogo.tela).to eq(tela)
       end
 
-      xit 'Limite máximo para baixo' do
-        jogo = Jogo.new
+      it 'Limite máximo para baixo' do
         jogo.desce
         tela = "      \n"\
                "    # \n"\
