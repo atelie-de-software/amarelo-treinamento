@@ -8,6 +8,8 @@ class Jogo
     @cogumelo_ativo = false
     @contador_tick = 0
     @monstro_ativo = false
+    @posicao_monstro_x = 0
+    @posicao_monstro_y = 4
   end
 
   def move(dx, dy)
@@ -21,6 +23,12 @@ class Jogo
 
   def ativa_monstro
     @monstro_ativo = true if @contador_tick == 10
+  end
+
+  def movimenta_monstro
+    p @posicao_monstro_x
+    p @monstro_ativo
+    @posicao_monstro_x += 1 if @monstro_ativo
   end
 
   def pular
@@ -52,7 +60,7 @@ class Jogo
       @cogumelo_ativo = true
     end
 
-    campo[4][0] = 'w' if @monstro_ativo
+    campo[@posicao_monstro_y][@posicao_monstro_x] = 'w' if @monstro_ativo
 
     if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
       campo[@posicao_y][@posicao_x] = @mario
@@ -70,6 +78,7 @@ class Jogo
     @contador_tick += 1
 
     pular
+    movimenta_monstro
     ativa_monstro
   end
 end

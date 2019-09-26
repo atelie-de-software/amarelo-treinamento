@@ -174,20 +174,21 @@ RSpec.describe Jogo do
            'w_m___'
     end
 
-    xit 'deve andar a direita a cada tick' do
+    it 'deve andar a direita a cada tick' do
       direita 4
       tick 10
       tela '      ',
            '    # ',
            '   ? #',
            '      ',
-           'w__m__'
+           'w___m_'
+
       tick
       tela '      ',
            '    # ',
            '   ? #',
            '      ',
-           '_w_m__'
+           '_w__m_'
     end
 
     context 'mario colidindo com o inimigo' do
