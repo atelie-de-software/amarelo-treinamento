@@ -17,7 +17,7 @@ def jogar_modo_grafico
     when 'right'
       jogo.direita
     when 'up'
-      jogo.sobe
+      jogo.pula
     when 'down'
       jogo.desce
     end

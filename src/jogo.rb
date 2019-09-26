@@ -1,10 +1,10 @@
 class Jogo
   def initialize
+    @mario = 'm'
     @posicao_x = 0
     @posicao_y = 4
-    @subindo = false
+    @pulando = false
     @bloco_quebravel_inteiro = true
-    @mario = 'm'
     @cogumelo_ativo = false
   end
 
@@ -13,10 +13,11 @@ class Jogo
     @posicao_y = [[@posicao_y + dy, 0].max, 4].min
   end
 
-  def sobe
-    @subindo = true
+  def pula
+    @pulando = true
   end
 
+  def sobe()     move( 0, -1);  end
   def desce()    move( 0 , 1) end
   def esquerda() move(-1,   0) end
   def direita()  move( 1,   0) end
@@ -51,11 +52,11 @@ class Jogo
   end
 
   def tick
-    if @subindo && @posicao_y > 1
-      @posicao_y -= 1
-      @subindo = false if @posicao_y == 1
-    elsif @posicao_y < 4 && @subindo == false
-      @posicao_y += 1
+    if @pulando
+      sobe()
+      @pulando = false if @posicao_y == 1
+    else
+      desce()
     end
   end
 end

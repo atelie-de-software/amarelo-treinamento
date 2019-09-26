@@ -16,8 +16,8 @@ def desce(vezes = 1)
   vezes.times { jogo.desce }
 end
 
-def sobe(vezes = 1)
-  vezes.times { jogo.sobe }
+def pula(vezes = 1)
+  vezes.times { jogo.pula }
 end
 
 def tick(vezes = 1)
@@ -80,7 +80,7 @@ RSpec.describe Jogo do
     context 'Quando personagem pular' do
       context 'Sem obstáculo' do
         it 'deve descer' do
-          sobe
+          pula
           tick
           tela '      ',
                '    # ',

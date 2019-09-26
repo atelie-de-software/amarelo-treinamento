@@ -12,7 +12,7 @@ def jogar_modo_texto
 
       jogo.direita if key == :right
       jogo.esquerda if key == :left
-      jogo.sobe if key == :up
+      jogo.pula if key == :up
       jogo.desce if key == :down
 
       jogo.tick
