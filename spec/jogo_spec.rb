@@ -196,13 +196,31 @@ RSpec.describe Jogo do
     end
   end
 
-  xit 'monstro deve aparecer após 10 ticks' do
-    direita 2
-    tick 10
-    tela '      ',
-         '    # ',
-         '   ? #',
-         '      ',
-         'w_m___'
+  context 'Inimigo' do
+    xit 'deve aparecer após 10 ticks' do
+      direita 2
+      tick 10
+      tela '      ',
+      '    # ',
+      '   ? #',
+      '      ',
+      'w_m___'
+    end
+
+    xit 'deve andar a direita a cada tick' do
+      direita 4
+      tick 10
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           'w__m__'
+      tick
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           '_w_m__'
+    end
   end
 end
