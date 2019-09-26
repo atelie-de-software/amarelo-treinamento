@@ -57,6 +57,15 @@ RSpec.describe Jogo do
            '_m____'
     end
 
+    it 'Movimento para a esquerda' do
+      esquerda
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           'm_____'
+    end
+
     context 'Personagem deve respeitar os limites da tela' do
       it 'Limite máximo para a lateral esquerda' do
        esquerda
