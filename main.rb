@@ -36,7 +36,7 @@ if resposta == 's'
     jogo.tela.split("\n").each.with_index { |line, index_line|
       line.each_char.with_index { |c, index|
         Image.new('images/mario.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "m"
-        Image.new('images/Bloco_surpresa.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "?"
+        Image.new('images/bloco_surpresa_fechado.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "?"
         Image.new('images/bloco_comum.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE) if c == "#"
       }
     }
