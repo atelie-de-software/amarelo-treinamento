@@ -1,27 +1,23 @@
 class Jogo
-  def initialize(posicao_x = 0, posicao_y = 4)
-    @posicao_x = posicao_x
-    @posicao_y = posicao_y
-    @contador_tick = 0
+  def initialize
+    @posicao_x = 0
+    @posicao_y = 4
     @subindo = false
     @bloco_quebravel_inteiro = true
+  end
+
+  def move(dx, dy)
+    @posicao_x += [[@posicao_x + dx , 0].max, 4].min
+    @posicao_y = [[@posicao_y + dy , 0].max, 4].min
   end
 
   def sobe
     @subindo = true
   end
 
-  def desce
-    @posicao_y += 1 unless limite_inferior
-  end
-
-  def esquerda
-    @posicao_x -= 1 unless limite_esquerdo
-  end
-
-  def direita
-    @posicao_x += 1
-  end
+  def desce()    move( 0 , 1) end
+  def esquerda() move(-1,   0) end
+  def direita()  move( 1,   0) end
 
   def tiro; end
 
