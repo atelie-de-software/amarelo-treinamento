@@ -7,8 +7,8 @@ class Jogo
   end
 
   def move(dx, dy)
-    @posicao_x += [[@posicao_x + dx , 0].max, 4].min
-    @posicao_y = [[@posicao_y + dy , 0].max, 4].min
+    @posicao_x = [[@posicao_x + dx, 0].max, 5].min
+    @posicao_y = [[@posicao_y + dy, 0].max, 4].min
   end
 
   def sobe
@@ -30,13 +30,10 @@ class Jogo
       ['_', '_', '_', '_', '_', '_']
     ] if @bloco_quebravel_inteiro
 
-    campo = [
-      [' ', ' ', ' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', 'o', '#', ' '],
-      [' ', ' ', ' ', '!', ' ', '#'],
-      [' ', ' ', ' ', ' ', ' ', ' '],
-      ['_', '_', '_', '_', '_', '_']
-    ] unless @bloco_quebravel_inteiro
+    unless @bloco_quebravel_inteiro
+      campo[2][2] << 'o'
+      campo[2][3] << '!'
+    end
 
     if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
       campo[@posicao_y][@posicao_x] = 'm'
