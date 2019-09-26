@@ -121,7 +121,7 @@ RSpec.describe Jogo do
       end
 
       context 'Pulo com obstáculo quebrável surpresa' do
-        it 'deve trocar o bloco e exibir o cogumelo' do
+        it 'deve trocar o bloco e exibir a surpresa' do
           direita 3
           sobe
           tick
@@ -160,33 +160,6 @@ RSpec.describe Jogo do
                '   ! #',
                '      ',
                '___M__'
-        end
-      end
-
-      context 'Pulo com obstáculo não quebrável' do
-        xit 'deve bater no bloco e cair' do
-          direita 4
-          sobe
-          tick
-          tela '      ',
-               '  #   ',
-               ' ? #  ',
-               '      ',
-               '___m__'
-
-          tick
-          tela '      ',
-               '  #   ',
-               ' ? #  ',
-               '   m  ',
-               '______'
-
-          tick
-          tela '      ',
-               '  #   ',
-               ' ? #  ',
-               '      ',
-               '___m__'
         end
       end
 
