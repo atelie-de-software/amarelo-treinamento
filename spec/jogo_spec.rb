@@ -164,7 +164,7 @@ RSpec.describe Jogo do
   end
 
   context 'Inimigo' do
-    xit 'deve aparecer após 10 ticks' do
+    it 'deve aparecer após 10 ticks' do
       direita 2
       tick 10
       tela '      ',

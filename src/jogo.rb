@@ -6,6 +6,8 @@ class Jogo
     @pulando = false
     @bloco_quebravel_inteiro = true
     @cogumelo_ativo = false
+    @contador_tick = 0
+    @monstro_ativo = false
   end
 
   def move(dx, dy)
@@ -15,6 +17,10 @@ class Jogo
 
   def pula
     @pulando = true
+  end
+
+  def ativa_monstro
+    @monstro_ativo = true if @contador_tick == 10
   end
 
   def pular
@@ -46,6 +52,8 @@ class Jogo
       @cogumelo_ativo = true
     end
 
+    campo[4][0] = 'w' if @monstro_ativo
+
     if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
       campo[@posicao_y][@posicao_x] = @mario
       @bloco_quebravel_inteiro &= !(@posicao_y == 2 && @posicao_x == 3)
@@ -59,6 +67,9 @@ class Jogo
   end
 
   def tick
-    pular()
+    @contador_tick += 1
+
+    pular
+    ativa_monstro
   end
 end
