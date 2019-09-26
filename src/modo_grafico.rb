@@ -12,14 +12,14 @@ def jogar_modo_grafico
 
   on :key_down do |event|
     case event.key
-      when 'left'
-        jogo.esquerda
-      when 'right'
-        jogo.direita
-      when 'up'
-        jogo.sobe
-      when 'down'
-        jogo.desce
+    when 'left'
+      jogo.esquerda
+    when 'right'
+      jogo.direita
+    when 'up'
+      jogo.sobe
+    when 'down'
+      jogo.desce
     end
   end
 
@@ -42,4 +42,6 @@ def plotar_imagem c, position_x, position_y
   Image.new('images/mario_direita_1.png', x: position_x, y: position_y) if c == "m"
   Image.new('images/bloco_surpresa_fechado.png', x: position_x, y: position_y) if c == "?"
   Image.new('images/bloco_comum.png', x: position_x, y: position_y) if c == "#"
+  Image.new('images/bloco_surpresa_aberto.png', x: position_x, y: position_y) if c == "!"
+  Image.new('images/cogumelo.png', x: position_x, y: position_y) if c == "o"
 end
