@@ -123,7 +123,7 @@ RSpec.describe Jogo do
       context 'Pulo com obstáculo quebrável surpresa' do
         it 'deve trocar o bloco e exibir a surpresa e alterar o Romario' do
           direita 3
-          sobe
+          pula
           tick
           tela '      ',
                '    # ',
@@ -197,7 +197,7 @@ RSpec.describe Jogo do
         xit 'deve matar o inimigo' do
           direita 4
           tick 10
-          sobe
+          pula
           tick
           tela '      ',
                '    # ',
