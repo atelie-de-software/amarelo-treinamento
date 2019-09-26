@@ -1,8 +1,8 @@
-SIZE_IMAGE = 25
+require './src/jogo'
+require 'ruby2d'
 
+SIZE_IMAGE = 25
 def jogar_modo_grafico
-  require './src/jogo'
-  require 'ruby2d'
 
   set width: 150, height: 125
   set background: 'black'
