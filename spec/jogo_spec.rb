@@ -141,16 +141,10 @@ RSpec.describe Jogo do
                '______'
           tick
           tela '      ',
-               '   o# ',
+               '    # ',
                '   ! #',
                '   m  ',
-               '______'
-          tick
-          tela '      ',
-               '   o# ',
-               '   ! #',
-               '      ',
-               '___m__'
+               '___o__'
         end
       end
 
@@ -187,29 +181,16 @@ RSpec.describe Jogo do
           sobe
           tick
           tela '      ',
-               '   o# ',
+               '    # ',
                '   ! #',
-               '  m   ',
-               '______'
+               '   m  ',
+               '___o__'
           tick
           tela '      ',
-               '   o# ',
-               '  m! #',
-               '      ',
-               '______'
-          tick
-          tela '      ',
-               '  mo# ',
+               '    # ',
                '   ! #',
                '      ',
-               '______'
-          direita
-          tick
-          tela '      ',
-               '   M# ',
-               '   ! #',
-               '      ',
-               '______'
+               '___M__'
         end
       end
     end
