@@ -36,8 +36,6 @@ RSpec.describe Jogo do
     end
   end
 
-
-
   context 'Movimentações do personagem' do
     it 'Movimento para direita' do
       direita
@@ -170,10 +168,10 @@ RSpec.describe Jogo do
       direita 2
       tick 10
       tela '      ',
-      '    # ',
-      '   ? #',
-      '      ',
-      'w_m___'
+           '    # ',
+           '   ? #',
+           '      ',
+           'w_m___'
     end
 
     xit 'deve andar a direita a cada tick' do
