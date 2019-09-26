@@ -2,12 +2,12 @@ require './src/jogo'
 require 'ruby2d'
 
 SIZE_IMAGE = 25
+
+set width: 150, height: 125
+set background: 'black'
+set fullscreen: true
+
 def jogar_modo_grafico
-
-  set width: 150, height: 125
-  set background: 'black'
-  set fullscreen: true
-
   jogo = Jogo.new
 
   on :key_down do |event|
@@ -35,7 +35,6 @@ def jogar_modo_grafico
     }
 
   end
-
   show
 end
 
