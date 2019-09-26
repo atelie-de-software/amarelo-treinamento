@@ -36,16 +36,7 @@ RSpec.describe Jogo do
     end
   end
 
-  context 'Movimentação do cenário' do
-    xit 'Cenário anda para a esquerda' do
-     direita 4
-     tela '      ',
-          ' #    ',
-          '? #   ',
-          '      ',
-          '__m___'
-    end
-  end
+
 
   context 'Movimentações do personagem' do
     it 'Movimento para direita' do
@@ -130,8 +121,8 @@ RSpec.describe Jogo do
       end
 
       context 'Pulo com obstáculo quebrável surpresa' do
-        xit 'deve trocar o bloco e exibir o cogumelo' do
-          direita 2
+        it 'deve trocar o bloco e exibir o cogumelo' do
+          direita 3
           sobe
           tick
           tela '      ',
@@ -142,9 +133,33 @@ RSpec.describe Jogo do
           tick
           tela '      ',
                '    # ',
+               '   m #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               '   m# ',
+               '   ! #',
+               '      ',
+               '___o__'
+          tick
+          tela '      ',
+               '    # ',
+               '   m #',
+               '      ',
+               '___o__'
+          tick
+          tela '      ',
+               '    # ',
                '   ! #',
                '   m  ',
-               '___o__'
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               '___M__'
         end
       end
 
