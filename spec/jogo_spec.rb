@@ -1,181 +1,169 @@
 require './src/jogo'
 
+def tela(*esperada)
+  expect(jogo.tela).to eq esperada.join("\n")
+end
+
+def direita(vezes = 1)
+  vezes.times { jogo.direita }
+end
+
+def esquerda(vezes = 1)
+  vezes.times { jogo.esquerda }
+end
+
+def desce(vezes = 1)
+  vezes.times { jogo.desce }
+end
+
+def sobe(vezes = 1)
+  vezes.times { jogo.sobe }
+end
+
+def tick(vezes = 1)
+  vezes.times { jogo.tick }
+end
+
 RSpec.describe Jogo do
-  context 'Tela inicial' do
-    let(:jogo) { Jogo.new }
-    it 'Cenário inícial' do
-      tela = "      \n"\
-             "    # \n"\
-             "   ? #\n"\
-             "      \n"\
-             "m_____"
-      expect(jogo.tela).to eq(tela)
+  let(:jogo) { Jogo.new }
+  context 'Instanciação da tela' do
+    it 'Tela Inicial' do
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           'm_____'
     end
   end
 
   context 'Movimentação do cenário' do
     xit 'Cenário anda para a esquerda' do
-     jogo.direita
-     jogo.direita
-     jogo.direita
-     jogo.direita
-     tela = "      \n"\
-            " #    \n"\
-            "? #   \n"\
-            "      \n"\
-            "__m___"
-     expect(jogo.tela).to eq(tela)
+     direita 4
+     tela '      ',
+          ' #    ',
+          '? #   ',
+          '      ',
+          '__m___'
     end
   end
 
   context 'Movimentações do personagem' do
-    let!(:jogo) { Jogo.new }
-
     it 'Movimento para direita' do
-      jogo.direita
-      tela = "      \n"\
-             "    # \n"\
-             "   ? #\n"\
-             "      \n"\
-             '_m____'
-      expect(jogo.tela).to eq(tela)
+      direita
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           '_m____'
     end
 
     context 'Personagem deve respeitar os limites da tela' do
       it 'Limite máximo para a lateral esquerda' do
-       jogo.esquerda
-       tela = "      \n"\
-              "    # \n"\
-              "   ? #\n"\
-              "      \n"\
-              "m_____"
-      expect(jogo.tela).to eq(tela)
+       esquerda
+       tela '      ',
+            '    # ',
+            '   ? #',
+            '      ',
+            'm_____'
       end
 
       it 'Limite máximo para baixo' do
-        jogo.desce
-        tela = "      \n"\
-               "    # \n"\
-               "   ? #\n"\
-               "      \n"\
-               "m_____"
-        expect(jogo.tela).to eq(tela)
+        desce
+        tela '      ',
+             '    # ',
+             '   ? #',
+             '      ',
+             'm_____'
       end
     end
 
     context 'Quando personagem pular' do
       it 'Sem obstáculo' do
-        jogo = Jogo.new
-        jogo.sobe
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "   ? #\n"\
-                "m     \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "m  ? #\n"\
-                "      \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "m   # \n"\
-                "   ? #\n"\
-                "      \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "m  ? #\n"\
-                "      \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "   ? #\n"\
-                "m     \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "   ? #\n"\
-                "      \n"\
-                "m_____"
-        expect(jogo.tela).to eq(tela)
+        sobe
+        tick
+        tela '      ',
+             '    # ',
+             '   ? #',
+             'm     ',
+             '______'
+        tick
+        tela '      ',
+             '    # ',
+             'm  ? #',
+             '      ',
+             '______'
+        tick
+        tela '      ',
+             'm   # ',
+             '   ? #',
+             '      ',
+             '______'
+        tick
+        tela '      ',
+             '    # ',
+             'm  ? #',
+             '      ',
+             '______'
+        tick
+        tela '      ',
+             '    # ',
+             '   ? #',
+             'm     ',
+             '______'
+        tick
+        tela '      ',
+             '    # ',
+             '   ? #',
+             '      ',
+             'm_____'
       end
 
       xit 'Pulo com obstáculo quebrável' do
-        jogo = Jogo.new
-        jogo.direita
-        jogo.direita
-        jogo.sobe
-        jogo.tick
-        tela =  "      \n"\
-                "    # \n"\
-                "   ? #\n"\
-                "   m  \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "   o# \n"\
-                "   ! #\n"\
-                "   m  \n"\
-                "______"
-        expect(jogo.tela).to eq(tela)
-
-        jogo.tick
-        tela =  "      \n"\
-                "   o# \n"\
-                "   ! #\n"\
-                "      \n"\
-                "___m__"
-        expect(jogo.tela).to eq(tela)
+        direita 2
+        sobe
+        tick
+        tela '      ',
+             '    # ',
+             '   ? #',
+             '   m  ',
+             '______'
+        tick
+        tela '      ',
+             '   o# ',
+             '   ! #',
+             '   m  ',
+             '______'
+        tick
+        tela '      ',
+             '   o# ',
+             '   ! #',
+             '      ',
+             '___m__'
       end
 
       xit 'Pulo com obstáculo não quebrável' do
-        jogo = Jogo.new
-        jogo.direita
-        jogo.direita
-        jogo.direita
-        jogo.direita
-        jogo.sobe
-        jogo.tick
-        tela = "      \n"\
-               "  #   \n"\
-               " ? #  \n"\
-               "      \n"\
-               "___m__"
-        expect(jogo.tela).to eq(tela)
+        direita 4
+        sobe
+        tick
+        tela = '      ',
+               '  #   ',
+               ' ? #  ',
+               '      ',
+               '___m__'
 
-        jogo.tick
-        tela = "      \n"\
-               "  #   \n"\
-               " ? #  \n"\
-               "   m  \n"\
-               "______"
-        expect(jogo.tela).to eq(tela)
+        tick
+        tela = '      ',
+               '  #   ',
+               ' ? #  ',
+               '   m  ',
+               '______'
 
-        jogo.tick
-        tela = "      \n"\
-               " #    \n"\
-               "? #   \n"\
-               "      \n"\
-               "__m___"
-        expect(jogo.tela).to eq(tela)
+        tick
+        tela = '      ',
+               '  #   ',
+               ' ? #  ',
+               '      ',
+               '___m__'
       end
     end
   end
