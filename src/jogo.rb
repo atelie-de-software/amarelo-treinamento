@@ -4,6 +4,8 @@ class Jogo
     @posicao_y = 4
     @subindo = false
     @bloco_quebravel_inteiro = true
+    @mario = 'm'
+    @cogumelo_ativo = false
   end
 
   def move(dx, dy)
@@ -31,13 +33,18 @@ class Jogo
     ]
 
     unless @bloco_quebravel_inteiro
-      campo[1][3] = 'o'
+      campo[4][3] = 'o'
       campo[2][3] = '!'
+      @cogumelo_ativo = true
     end
 
     if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
-      campo[@posicao_y][@posicao_x] = 'm'
+      campo[@posicao_y][@posicao_x] = @mario
       @bloco_quebravel_inteiro &= !(@posicao_y == 2 && @posicao_x == 3)
+      if @cogumelo_ativo && (@posicao_y == 3 && @posicao_y == 3)
+        @mario = 'M'
+        campo[4][3] = '_'
+      end
     end
 
     campo.map { |linha| linha.reduce(:+) }.join("\n")

@@ -88,7 +88,7 @@ RSpec.describe Jogo do
 
     context 'Quando personagem pular' do
       context 'Sem obstáculo' do
-        xit 'deve descer' do
+        it 'deve descer' do
           sobe
           tick
           tela '      ',
@@ -130,7 +130,7 @@ RSpec.describe Jogo do
       end
 
       context 'Pulo com obstáculo quebrável surpresa' do
-        xit 'deve trocar o bloco e exibir o cogumelo' do
+        it 'deve trocar o bloco e exibir o cogumelo' do
           direita 2
           sobe
           tick
