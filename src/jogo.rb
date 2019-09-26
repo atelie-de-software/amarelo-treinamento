@@ -26,8 +26,6 @@ class Jogo
   end
 
   def movimenta_monstro
-    p @posicao_monstro_x
-    p @monstro_ativo
     @posicao_monstro_x += 1 if @monstro_ativo
   end
 
