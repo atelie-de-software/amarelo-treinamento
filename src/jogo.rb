@@ -33,7 +33,7 @@ class Jogo
     ]
 
     unless @bloco_quebravel_inteiro
-      campo[4][3] = 'o'
+      campo[4][3] = 'o' unless @cogumelo_ativo && @mario == 'M'
       campo[2][3] = '!'
       @cogumelo_ativo = true
     end
