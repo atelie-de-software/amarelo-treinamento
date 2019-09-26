@@ -195,4 +195,14 @@ RSpec.describe Jogo do
       end
     end
   end
+
+  xit 'monstro deve aparecer após 10 ticks' do
+    direita 2
+    tick 10
+    tela '      ',
+         '    # ',
+         '   ? #',
+         '      ',
+         'w_m___'
+  end
 end
