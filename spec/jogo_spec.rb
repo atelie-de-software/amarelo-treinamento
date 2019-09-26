@@ -225,8 +225,8 @@ RSpec.describe Jogo do
         end
       end
 
-      context 'estando pequeno' do
-        xit 'deve morrer o Mario e ficar o inimigo' do
+      context 'não especial' do
+        xit 'deve morrer o Mario e dar game over' do
           direita 1
           tick 10
           tela '      ',
@@ -239,7 +239,13 @@ RSpec.describe Jogo do
                '    # ',
                '   ? #',
                '      ',
-               '_w____'
+               '_x____'
+          tick
+          tela '@     ',
+               '      ',
+               '      ',
+               '      ',
+               '______'
         end
       end
     end
