@@ -180,6 +180,38 @@ RSpec.describe Jogo do
                '___m__'
         end
       end
+
+      context 'tendo um cogumelo no caminho' do
+        xit 'deve mudar para o Mario grande' do
+          direita 1
+          sobe
+          tick
+          tela '      ',
+               '   o# ',
+               '   ! #',
+               '  m   ',
+               '______'
+          tick
+          tela '      ',
+               '   o# ',
+               '  m! #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               '  mo# ',
+               '   ! #',
+               '      ',
+               '______'
+          direita
+          tick
+          tela '      ',
+               '   M# ',
+               '   ! #',
+               '      ',
+               '______'
+        end
+      end
     end
   end
 end
