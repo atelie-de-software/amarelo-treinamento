@@ -130,7 +130,7 @@ RSpec.describe Jogo do
       end
 
       context 'Pulo com obstáculo quebrável surpresa' do
-        it 'deve trocar o bloco e exibir o cogumelo' do
+        xit 'deve trocar o bloco e exibir o cogumelo' do
           direita 2
           sobe
           tick
@@ -177,7 +177,7 @@ RSpec.describe Jogo do
 
       context 'tendo um cogumelo no caminho' do
         xit 'deve mudar para o Mario grande' do
-          direita 1
+          direita 4
           sobe
           tick
           tela '      ',
@@ -221,6 +221,58 @@ RSpec.describe Jogo do
            '   ? #',
            '      ',
            '_w_m__'
+    end
+
+    context 'mario colidindo com o inimigo' do
+      context 'estando grande' do
+        xit 'deve ficar pequeno e matar o inimigo' do
+          direita 4
+          tick 10
+          sobe
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '   m  ',
+               'w__o__'
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               '_w_M__'
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               '__wM__'
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               '___m__'
+        end
+      end
+
+      context 'estando pequeno' do
+        xit 'deve morrer o Mario e ficar o inimigo' do
+          direita 1
+          tick 10
+          tela '      ',
+               '    # ',
+               '   ? #',
+               '      ',
+               'wm____'
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               '      ',
+               '_w____'
+        end
+      end
     end
   end
 end
