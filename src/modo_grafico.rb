@@ -25,7 +25,7 @@ def jogar_modo_grafico
 
   update do
     clear
-    sleep(0.1)
+    sleep(0.3)
 
     jogo.tick
     jogo.tela.split("\n").each.with_index { |line, index_line|
