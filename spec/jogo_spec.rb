@@ -121,7 +121,7 @@ RSpec.describe Jogo do
       end
 
       context 'Pulo com obstáculo quebrável surpresa' do
-        it 'deve trocar o bloco e exibir a surpresa' do
+        it 'deve trocar o bloco e exibir a surpresa e alterar o Romario' do
           direita 3
           sobe
           tick
@@ -162,25 +162,6 @@ RSpec.describe Jogo do
                '___M__'
         end
       end
-
-      context 'tendo um cogumelo no caminho' do
-        xit 'deve mudar para o Mario grande' do
-          direita 4
-          sobe
-          tick
-          tela '      ',
-               '    # ',
-               '   ! #',
-               '   m  ',
-               '___o__'
-          tick
-          tela '      ',
-               '    # ',
-               '   ! #',
-               '      ',
-               '___M__'
-        end
-      end
     end
   end
 
@@ -212,8 +193,8 @@ RSpec.describe Jogo do
     end
 
     context 'mario colidindo com o inimigo' do
-      context 'estando grande' do
-        xit 'deve ficar pequeno e matar o inimigo' do
+      context 'estando especial' do
+        xit 'deve matar o inimigo' do
           direita 4
           tick 10
           sobe
@@ -240,7 +221,7 @@ RSpec.describe Jogo do
                '    # ',
                '   ! #',
                '      ',
-               '___m__'
+               '___M__'
         end
       end
 
