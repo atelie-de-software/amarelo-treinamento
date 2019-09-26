@@ -51,14 +51,4 @@ class Jogo
       @posicao_y += 1
     end
   end
-
-  private
-
-  def limite_inferior
-    @posicao_y + 1 > 4
-  end
-
-  def limite_esquerdo
-    @posicao_x - 1 < 0
-  end
 end
