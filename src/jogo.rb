@@ -28,11 +28,11 @@ class Jogo
       [' ', ' ', ' ', '?', ' ', '#'],
       [' ', ' ', ' ', ' ', ' ', ' '],
       ['_', '_', '_', '_', '_', '_']
-    ] if @bloco_quebravel_inteiro
+    ]
 
     unless @bloco_quebravel_inteiro
-      campo[2][2] << 'o'
-      campo[2][3] << '!'
+      campo[1][3] = 'o'
+      campo[2][3] = '!'
     end
 
     if (@posicao_y >= 0 && @posicao_y <= 4) && (@posicao_x >= 0 && @posicao_x <= 6)
