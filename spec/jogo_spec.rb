@@ -87,92 +87,98 @@ RSpec.describe Jogo do
     end
 
     context 'Quando personagem pular' do
-      it 'Sem obstáculo' do
-        sobe
-        tick
-        tela '      ',
-             '    # ',
-             '   ? #',
-             'm     ',
-             '______'
-        tick
-        tela '      ',
-             '    # ',
-             'm  ? #',
-             '      ',
-             '______'
-        tick
-        tela '      ',
-             'm   # ',
-             '   ? #',
-             '      ',
-             '______'
-        tick
-        tela '      ',
-             '    # ',
-             'm  ? #',
-             '      ',
-             '______'
-        tick
-        tela '      ',
-             '    # ',
-             '   ? #',
-             'm     ',
-             '______'
-        tick
-        tela '      ',
-             '    # ',
-             '   ? #',
-             '      ',
-             'm_____'
+      context 'Sem obstáculo' do
+        xit 'deve descer' do
+          sobe
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               'm     ',
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               'm  ? #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               'm   # ',
+               '   ? #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               'm  ? #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               'm     ',
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               '      ',
+               'm_____'
+        end
       end
 
-      xit 'Pulo com obstáculo quebrável' do
-        direita 2
-        sobe
-        tick
-        tela '      ',
-             '    # ',
-             '   ? #',
-             '   m  ',
-             '______'
-        tick
-        tela '      ',
-             '   o# ',
-             '   ! #',
-             '   m  ',
-             '______'
-        tick
-        tela '      ',
-             '   o# ',
-             '   ! #',
-             '      ',
-             '___m__'
+      context 'Pulo com obstáculo quebrável surpresa' do
+        xit 'deve trocar o bloco e exibir o cogumelo' do
+          direita 2
+          sobe
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               '   m  ',
+               '______'
+          tick
+          tela '      ',
+               '   o# ',
+               '   ! #',
+               '   m  ',
+               '______'
+          tick
+          tela '      ',
+               '   o# ',
+               '   ! #',
+               '      ',
+               '___m__'
+        end
       end
 
-      xit 'Pulo com obstáculo não quebrável' do
-        direita 4
-        sobe
-        tick
-        tela = '      ',
+      context 'Pulo com obstáculo não quebrável' do
+        xit 'deve bater no bloco e cair' do
+          direita 4
+          sobe
+          tick
+          tela '      ',
                '  #   ',
                ' ? #  ',
                '      ',
                '___m__'
 
-        tick
-        tela = '      ',
+          tick
+          tela '      ',
                '  #   ',
                ' ? #  ',
                '   m  ',
                '______'
 
-        tick
-        tela = '      ',
+          tick
+          tela '      ',
                '  #   ',
                ' ? #  ',
                '      ',
                '___m__'
+        end
       end
     end
   end
