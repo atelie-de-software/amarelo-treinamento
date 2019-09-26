@@ -17,6 +17,13 @@ class Jogo
     @pulando = true
   end
 
+  def pular
+    return desce() unless @pulando
+
+    sobe()
+    @pulando = (@posicao_y != 1)
+  end
+
   def sobe()     move( 0, -1);  end
   def desce()    move( 0 , 1) end
   def esquerda() move(-1,   0) end
@@ -52,11 +59,6 @@ class Jogo
   end
 
   def tick
-    if @pulando
-      sobe()
-      @pulando = false if @posicao_y == 1
-    else
-      desce()
-    end
+    pular()
   end
 end
