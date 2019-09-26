@@ -30,13 +30,17 @@ def jogar_modo_grafico
     jogo.tick
     jogo.tela.split("\n").each.with_index { |line, index_line|
       line.each_char.with_index { |c, index|
-        Image.new('images/mario_direita_1.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "m"
-        Image.new('images/bloco_surpresa_fechado.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE)  if c == "?"
-        Image.new('images/bloco_comum.png', x: index * SIZE_IMAGE, y: index_line * SIZE_IMAGE) if c == "#"
+        plotar_imagem(c, index * SIZE_IMAGE, index_line * SIZE_IMAGE)
       }
     }
 
   end
 
   show
+end
+
+def plotar_imagem c, position_x, position_y
+  Image.new('images/mario_direita_1.png', x: position_x, y: position_y) if c == "m"
+  Image.new('images/bloco_surpresa_fechado.png', x: position_x, y: position_y) if c == "?"
+  Image.new('images/bloco_comum.png', x: position_x, y: position_y) if c == "#"
 end
