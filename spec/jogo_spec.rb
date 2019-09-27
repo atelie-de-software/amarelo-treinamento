@@ -191,6 +191,15 @@ RSpec.describe Jogo do
            '_w__m_'
     end
 
+    it 'não deve exceder o limite esquerdo' do
+      tick 10
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           'm____w'
+    end
+
     context 'mario colidindo com o inimigo' do
       context 'estando especial' do
         xit 'deve matar o inimigo' do
