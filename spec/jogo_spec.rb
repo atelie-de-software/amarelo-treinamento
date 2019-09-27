@@ -211,16 +211,51 @@ RSpec.describe Jogo do
 
     context 'mario colidindo com o inimigo' do
       context 'estando especial' do
-        xit 'deve matar o inimigo' do
-          direita 4
-          tick 10
+        it 'deve matar o inimigo' do
+          direita 3
           pula
+          tick
+          tela '      ',
+               '    # ',
+               '   ? #',
+               '   m  ',
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               '   m #',
+               '      ',
+               '______'
+          tick
+          tela '      ',
+               '   m# ',
+               '   ! #',
+               '      ',
+               '___o__'
+          tick
+          tela '      ',
+               '    # ',
+               '   m #',
+               '      ',
+               '___o__'
           tick
           tela '      ',
                '    # ',
                '   ! #',
                '   m  ',
-               'w__o__'
+               '______'
+          tick
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               '___M__'
+          tick 4
+          tela '      ',
+               '    # ',
+               '   ! #',
+               '      ',
+               'w__M__'
           tick
           tela '      ',
                '    # ',
@@ -238,7 +273,13 @@ RSpec.describe Jogo do
                '    # ',
                '   ! #',
                '      ',
-               '___M__'
+               '___m__'
+           tick
+           tela '      ',
+                '    # ',
+                '   ! #',
+                '      ',
+                '___m__'
         end
       end
 
