@@ -273,13 +273,13 @@ RSpec.describe Jogo do
                '    # ',
                '   ! #',
                '      ',
-               '___m__'
+               '___M__'
            tick
            tela '      ',
                 '    # ',
                 '   ! #',
                 '      ',
-                '___m__'
+                '___M__'
         end
       end
 

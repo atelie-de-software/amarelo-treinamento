@@ -41,7 +41,6 @@ class Jogo
   def mata_monstro
     if [@posicao_monstro_x,@posicao_monstro_y] == [@posicao_x,@posicao_y] && @mario == 'M'
       @monstro_ativo = false
-      @mario = 'm'
     end
   end
 
