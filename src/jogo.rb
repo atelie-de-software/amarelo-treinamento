@@ -10,6 +10,7 @@ class Jogo
     @monstro_ativo = false
     @posicao_monstro_x = 0
     @posicao_monstro_y = 4
+    @monstro_indo = true
   end
 
   def move(dx, dy)
@@ -19,7 +20,14 @@ class Jogo
 
   def move_monstro
     return unless @monstro_ativo
-    @posicao_monstro_x = [[@posicao_monstro_x + 1, 0].max, 5].min
+
+    if @monstro_indo
+      @posicao_monstro_x += 1 if @posicao_monstro_x < 5
+      @monstro_indo = false if @posicao_monstro_x == 5
+    else
+      @posicao_monstro_x -= 1 if @posicao_monstro_x > 0
+      @monstro_indo = true if @posicao_monstro_x == 0
+    end
   end
 
   def pula

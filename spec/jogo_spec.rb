@@ -191,8 +191,8 @@ RSpec.describe Jogo do
            '_w__m_'
     end
 
-    it 'não deve exceder o limite esquerdo' do
-      tick 100
+    it 'não deve exceder o limite direito' do
+      tick 15
       tela '      ',
            '    # ',
            '   ? #',
@@ -200,8 +200,8 @@ RSpec.describe Jogo do
            'm____w'
     end
 
-    xit 'deve voltar quando chegar no limite esquerdo' do
-      tick
+    it 'deve voltar quando chegar no limite esquerdo' do
+      tick 16
       tela '      ',
            '    # ',
            '   ? #',
