@@ -191,13 +191,22 @@ RSpec.describe Jogo do
            '_w__m_'
     end
 
-    it 'não deve exceder o limite esquerdo' do
-      tick 10
+    xit 'não deve exceder o limite esquerdo' do
+      tick
       tela '      ',
            '    # ',
            '   ? #',
            '      ',
            'm____w'
+    end
+
+    xit 'deve voltar quando chegar no limite esquerdo' do
+      tick
+      tela '      ',
+           '    # ',
+           '   ? #',
+           '      ',
+           'm___w_'
     end
 
     context 'mario colidindo com o inimigo' do
