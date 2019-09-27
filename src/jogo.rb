@@ -17,17 +17,17 @@ class Jogo
     @posicao_y = [[@posicao_y + dy, 0].max, 4].min
   end
 
+  def move_monstro
+    return unless @monstro_ativo
+    @posicao_monstro_x = [[@posicao_monstro_x + 1, 0].max, 5].min
+  end
+
   def pula
     @pulando = true
   end
 
   def ativa_monstro
     @monstro_ativo = true if @contador_tick == 10
-  end
-
-  def movimenta_monstro
-    @posicao_monstro_x += 1 if @monstro_ativo
-    mata_monstro
   end
 
   def mata_monstro
@@ -84,7 +84,8 @@ class Jogo
     @contador_tick += 1
 
     pular
-    movimenta_monstro
+    move_monstro
+    mata_monstro
     ativa_monstro
   end
 end
